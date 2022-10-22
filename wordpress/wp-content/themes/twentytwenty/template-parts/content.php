@@ -30,17 +30,16 @@ if (!is_single()) {
 
 			get_template_part('template-parts/entry-header');
 
-<<<<<<< HEAD
+?>
 			<?php
 			if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
 				the_excerpt();
 			} else {
 				the_content( __( 'Continue reading', 'twentytwenty' ) );
-					
-=======
+			}	
 			if (!is_search()) {
 				get_template_part('template-parts/featured-image');
->>>>>>> 9c2807c3ab7eb9867fdc877a5a82850d62aac9b5
+
 			}
 
 			?>
