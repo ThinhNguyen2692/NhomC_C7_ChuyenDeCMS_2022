@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The default template for displaying content
  *
@@ -10,104 +11,102 @@
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */
-$class='';
-if(!is_single()){
+$class = '';
+if (!is_single()) {
 	$class = "danh-sach";
+	$classRow = "row";
+	$class6 = "col-6";
 }
-
 
 ?>
 
 <article <?php post_class($class); ?> id="post-<?php the_ID(); ?>">
-	<div class="row">
-		<div class="col-5"><?php
-		twentytwenty_the_post_meta( get_the_ID(), 'single-top' );
-		?></div>
-		<div class="col-5">
-		<?php
-	
-	get_template_part( 'template-parts/entry-header' );
-
-	if ( ! is_search() ) {
-		get_template_part( 'template-parts/featured-image' );
-	}
-
-	?>
-
-	<div class="post-inner <?php echo is_page_template( 'templates/template-full-width.php' ) ? '' : 'thin'; ?> ">
-
-		<div class="entry-content">
-
+	<div <?php post_class($classRow); ?>>
+		<div <?php post_class($class6); ?>><?php
+							twentytwenty_the_post_meta(get_the_ID(), 'single-top');
+							?></div>
+		<div <?php post_class($class6); ?>>
 			<?php
-			if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-				the_excerpt();
-			} else {
-				if(is_single()){
-					the_content( __( 'Continue reading', 'twentytwenty' ) );
-				}else{
-					$post = get_post();
-					echo substr($post->post_content, 0, 100);
-				}
-				
-					
+
+			get_template_part('template-parts/entry-header');
+
+			if (!is_search()) {
+				get_template_part('template-parts/featured-image');
 			}
+
 			?>
 
-		</div><!-- .entry-content -->
+			<div class="post-inner <?php echo is_page_template('templates/template-full-width.php') ? '' : 'thin'; ?> ">
 
-	</div><!-- .post-inner -->
+				<div class="entry-content">
 
-	<div class="section-inner">
-		<?php
-		wp_link_pages(
-			array(
-				'before'      => '<nav class="post-nav-links bg-light-background" aria-label="' . esc_attr__( 'Page', 'twentytwenty' ) . '"><span class="label">' . __( 'Pages:', 'twentytwenty' ) . '</span>',
-				'after'       => '</nav>',
-				'link_before' => '<span class="page-number">',
-				'link_after'  => '</span>',
-			)
-		);
+					<?php
+					if (is_search() || !is_singular() && 'summary' === get_theme_mod('blog_content', 'full')) {
+						the_excerpt();
+					} else {
+						if (is_single()) {
+							the_content(__('Continue reading', 'twentytwenty'));
+						} else {
+							$post = get_post();
+							echo substr($post->post_content, 0, 100);
+						}
+					}
+					?>
 
-		edit_post_link();
+				</div><!-- .entry-content -->
 
-		// Single bottom post meta.
-		twentytwenty_the_post_meta( get_the_ID(), 'single-bottom' );
+			</div><!-- .post-inner -->
 
-		if ( post_type_supports( get_post_type( get_the_ID() ), 'author' ) && is_single() ) {
+			<div class="section-inner">
+				<?php
+				wp_link_pages(
+					array(
+						'before'      => '<nav class="post-nav-links bg-light-background" aria-label="' . esc_attr__('Page', 'twentytwenty') . '"><span class="label">' . __('Pages:', 'twentytwenty') . '</span>',
+						'after'       => '</nav>',
+						'link_before' => '<span class="page-number">',
+						'link_after'  => '</span>',
+					)
+				);
 
-			get_template_part( 'template-parts/entry-author-bio' );
+				edit_post_link();
 
-		}
-		?>
+				// Single bottom post meta.
+				twentytwenty_the_post_meta(get_the_ID(), 'single-bottom');
 
-	</div><!-- .section-inner -->
+				if (post_type_supports(get_post_type(get_the_ID()), 'author') && is_single()) {
 
-	<?php
+					get_template_part('template-parts/entry-author-bio');
+				}
+				?>
 
-	if ( is_single() ) {
+			</div><!-- .section-inner -->
 
-		get_template_part( 'template-parts/navigation' );
+			<?php
 
-	}
+			if (is_single()) {
 
-	/*
+				get_template_part('template-parts/navigation');
+			}
+
+			/*
 	 * Output comments wrapper if it's a post, or if comments are open,
 	 * or if there's a comment number – and check for password.
 	 */
-	if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
-		?>
+			if ((is_single() || is_page()) && (comments_open() || get_comments_number()) && !post_password_required()) {
+			?>
 
-		<div class="comments-wrapper section-inner">
+				<div class="comments-wrapper section-inner">
 
-			<?php comments_template(); ?>
+					<?php comments_template(); ?>
 
-		</div><!-- .comments-wrapper -->
+				</div><!-- .comments-wrapper -->
 
-		<?php
-	}
-	?>
+			<?php
+			}
+			?>
 		</div>
 	</div>
-	
+
+
 
 </article><!-- .post -->
