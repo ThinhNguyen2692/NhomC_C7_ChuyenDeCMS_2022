@@ -13,9 +13,10 @@
  */
 $class = '';
 if (!is_single()) {
-	$class = "danh-sach";
+	$class = "danh-sach content";
 	$classRow = "row";
-	$class6 = "col-6";
+	$class6 = "col-3";
+	$class61 = "col-9 ";
 }
 
 ?>
@@ -25,13 +26,12 @@ if (!is_single()) {
 		<div <?php post_class($class6); ?>><?php
 							twentytwenty_the_post_meta(get_the_ID(), 'single-top');
 							?></div>
-		<div <?php post_class($class6); ?>>
+		<div <?php post_class($class61); ?>>
 			<?php
 
 			get_template_part('template-parts/entry-header');
 
 ?>
-		
 			<div class="post-inner <?php echo is_page_template('templates/template-full-width.php') ? '' : 'thin'; ?> ">
 
 				<div class="entry-content">

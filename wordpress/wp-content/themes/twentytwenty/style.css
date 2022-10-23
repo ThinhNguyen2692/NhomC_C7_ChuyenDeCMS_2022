@@ -6591,3 +6591,7 @@ section .section-title {
 	left: 430px;
 }
 
+.content{
+	font-size: 0.9em;
+    padding: 15px;
+}
