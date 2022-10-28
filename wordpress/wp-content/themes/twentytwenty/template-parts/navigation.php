@@ -77,10 +77,10 @@ if ($next_post || $prev_post) {
 
 					<div class="arrow">
 						<div class="arrow-headlinesdm">
-							<div class="arrow-headlinesday"><?php echo $day = date("j", strtotime($date)); ?></div>
-							<div class="arrow-headlinesmonth">10</div>
+							<div class="arrow-headlinesday"><?php echo get_the_date('d', $post_id); ?></div>
+							<div class="arrow-headlinesmonth"><?php echo get_the_date('m', $post_id); ?></div>
 						</div>
-						<div class="arrow-headlinesyear">22</div>
+						<div class="arrow-headlinesyear"><?php echo get_the_date('y', $post_id); ?></div>
 						<span class="title"  style="margin-left: 110px;"><span class="title-inner"><?php echo wp_kses_post(get_the_title($prev_post->ID)); ?></span></span>
 					
 					</div>
@@ -90,10 +90,10 @@ if ($next_post || $prev_post) {
 				<a class="previous-post" href="<?php echo esc_url(get_permalink($next_post->ID)); ?>">
 					<div class="arrow">
 						<div class="arrow-headlinesdm">
-							<div class="arrow-headlinesday"><?php echo $day = date("j", strtotime($date)); ?></div>
-							<div class="arrow-headlinesmonth">2</div>
+							<div class="arrow-headlinesday"><?php echo get_the_date('d', $post_id); ?></div>
+							<div class="arrow-headlinesmonth"><?php echo get_the_date('m', $post_id); ?></div>
 						</div>
-						<div class="arrow-headlinesyear">22</div>
+						<div class="arrow-headlinesyear"><?php echo get_the_date('y', $post_id); ?></div>
 						<span class="title"><span class="title-inner"><?php echo wp_kses_post(get_the_title($next_post->ID)); ?></span></span>
 					</div>
 				</a>
