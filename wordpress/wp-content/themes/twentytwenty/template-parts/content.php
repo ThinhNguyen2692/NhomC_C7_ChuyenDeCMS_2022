@@ -15,26 +15,35 @@ $class = '';
 if (!is_single()) {
 	$class = "danh-sach content";
 	$classRow = "row";
-	$class6 = "col-3";
-	$class61 = "col-9 ";
-}
+	$class6 = "col-3 date-content-home";
+	$class61 = "col-9 content-home";
+	$class22 = "col-2";
+	$class8 = "col-8 danh-sach-content";
 
+}
+$has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
 ?>
 
 <article <?php post_class($class); ?> id="post-<?php the_ID(); ?>">
+
+	
+	
 	<div <?php post_class($classRow); ?>>
 		<div <?php post_class($class6); ?>><?php
-							twentytwenty_the_post_meta(get_the_ID(), 'single-top');
-							?></div>
+							if(!is_single()){
+								twentytwenty_the_post_meta(get_the_ID(), 'single-top');
+							}
+							?>
+		</div>
 		<div <?php post_class($class61); ?>>
 			<?php
 
 			get_template_part('template-parts/entry-header');
+			if (is_single()) echo '<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />';
+			?>
+			<div class="post-inner <?php if (is_single()) echo "detail-conten"?> <?php echo is_page_template('templates/template-full-width.php') ? '' : 'thin'; ?> ">
 
-?>
-			<div class="post-inner <?php echo is_page_template('templates/template-full-width.php') ? '' : 'thin'; ?> ">
-
-				<div class="entry-content">
+				<div class="<?php if(is_single()){ echo "container";}?>">
 
 					<?php
 					if (is_search() || !is_singular() && 'summary' === get_theme_mod('blog_content', 'full')) {
@@ -45,10 +54,11 @@ if (!is_single()) {
 						} else {
 							$post = get_post();
 							echo substr($post->post_content, 0, 100);
+							?> <a href="<?php echo esc_url( get_permalink() ) ?>">[...]</a><?php
 						}
 					}
 					?>
-
+					
 				</div><!-- .entry-content -->
 
 			</div><!-- .post-inner -->
@@ -85,9 +95,9 @@ if (!is_single()) {
 			}
 
 			/*
-	 * Output comments wrapper if it's a post, or if comments are open,
-	 * or if there's a comment number – and check for password.
-	 */
+			* Output comments wrapper if it's a post, or if comments are open,
+			* or if there's a comment number – and check for password.
+			*/
 			if ((is_single() || is_page()) && (comments_open() || get_comments_number()) && !post_password_required()) {
 			?>
 
@@ -102,6 +112,10 @@ if (!is_single()) {
 			?>
 		</div>
 	</div>
+		
+
+		
+	
 
 
 

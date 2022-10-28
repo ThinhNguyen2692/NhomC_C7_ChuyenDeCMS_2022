@@ -1908,7 +1908,7 @@ function get_archives_link( $url, $text, $format = 'html', $before = '', $after 
 		$selected_attr = $selected ? " selected='selected'" : '';
 		$link_html     = "\t<option value='$url'$selected_attr>$before $text $after</option>\n";
 	} elseif ( 'html' === $format ) {
-		$link_html = "\t<li>$before<a href='$url'$aria_current>$text</a>$after</li>\n";
+		$link_html = "\t<li>$before<i class='fa fa-angle-double-right'></i> <a href='$url'$aria_current>$text</a>$after</li>\n";
 	} else { // Custom.
 		$link_html = "\t$before<a href='$url'$aria_current>$text</a>$after\n";
 	}

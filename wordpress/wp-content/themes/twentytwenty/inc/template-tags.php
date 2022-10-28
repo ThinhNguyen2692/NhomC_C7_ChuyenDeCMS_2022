@@ -337,7 +337,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 
 		?>
 
-		<div class="post-information-div post-meta-wrapper<?php echo esc_attr( $post_meta_wrapper_classes ); ?>">
+		<div class="post-information-div <?php if(!is_single()) echo "date-home-information";?> post-meta-wrapper<?php echo esc_attr( $post_meta_wrapper_classes ); ?>">
 
 			<ul class="post-information   post-meta<?php echo esc_attr( $post_meta_classes ); ?>">
 
@@ -357,12 +357,12 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 				 *                          Accepts 'single-top' or 'single-bottom'.
 				 */
 				do_action( 'twentytwenty_start_of_post_meta_list', $post_id, $post_meta, $location );
-
+				if(is_single()){
 				// Author.
 				if ( post_type_supports( get_post_type( $post_id ), 'author' ) && in_array( 'author', $post_meta, true ) ) {
 
-					$has_meta = true;
-					?>
+					$has_meta = true;?> 
+		
 					<li class="post-author meta-wrapper">
 						<span class="meta-icon">
 							<span class="screen-reader-text"><?php _e( 'Post author', 'twentytwenty' ); ?></span>
@@ -484,7 +484,28 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 				 *                          Accepts 'single-top' or 'single-bottom'.
 				 */
 				do_action( 'twentytwenty_end_of_post_meta_list', $post_id, $post_meta, $location );
+			}
+			else{
+				if ( in_array( 'post-date', $post_meta, true ) ) {
 
+					$has_meta = true;
+					?>
+					<li class="post-datev post-information  meta-wrapper">
+					
+						<div id="date-home">
+							<span  id="date-home-1">
+							<?php the_time( get_the_time( 'd' ) ); ?>
+						</span>
+							
+					<br>
+					Tháng<?php the_time( get_the_time( 'm' ) ); ?>
+				</div>
+					</li>
+					<?php
+
+				}
+
+			}
 				?>
 
 			</ul><!-- .post-meta -->

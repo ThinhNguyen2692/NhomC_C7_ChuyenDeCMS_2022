@@ -73,7 +73,7 @@ function render_block_core_archives( $attributes ) {
 		);
 	}
 
-	$class .= ' wp-block-archives-list';
+	$class .= ' wp-block-archives-list quick-links';
 
 	/** This filter is documented in wp-includes/widgets/class-wp-widget-archives.php */
 	$archives_args = apply_filters(

@@ -111,7 +111,7 @@ function render_block_core_latest_posts( $attributes ) {
 		}
 
 		$list_items_markup .= sprintf(
-			'<a class="wp-block-latest-posts__post-title" href="%1$s">%2$s</a>',
+			'<i class="fa fa-angle-double-right"></i> <a class="wp-block-latest-posts__post-title" href="%1$s">%2$s</a>',
 			esc_url( $post_link ),
 			$title
 		);
@@ -173,7 +173,7 @@ function render_block_core_latest_posts( $attributes ) {
 
 	remove_filter( 'excerpt_length', 'block_core_latest_posts_get_excerpt_length', 20 );
 
-	$class = 'wp-block-latest-posts__list';
+	$class = 'wp-block-latest-posts__list quick-links';
 
 	if ( isset( $attributes['postLayout'] ) && 'grid' === $attributes['postLayout'] ) {
 		$class .= ' is-grid';

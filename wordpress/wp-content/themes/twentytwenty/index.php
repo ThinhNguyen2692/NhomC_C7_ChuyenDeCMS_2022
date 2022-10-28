@@ -72,24 +72,60 @@ get_header();
 			</div><!-- .archive-header-inner -->
 
 		</header><!-- .archive-header -->
-
+		
 		<?php
 	}
 
 	if ( have_posts() ) {
 
 		$i = 0;
-
+		?> 
+		<div class="row">
+			<div class="col-3 index-active">
+				<?php
+					$has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
+					if ( $has_sidebar_2){ 
+						?>
+							<div class="footer-widgets column-two grid-item">
+								<?php dynamic_sidebar( 'sidebar-2' ); ?>
+							</div>
+						<?php
+					}
+				?>
+			</div>
+			<div class="col-6">
+		<?php
 		while ( have_posts() ) {
 			$i++;
 			if ( $i > 1 ) {
 				echo '<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />';
 			}
 			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
+			?>
+			
+			<div><?php get_template_part( 'template-parts/content', get_post_type() );	?></div>
+			
+			<?php 
+			
 		}
+		?>
+		</div>
+			<div class="col-3">
+			<?php
+					$has_sidebar_4 = is_active_sidebar( 'sidebar-4' );
+					if ( $has_sidebar_4){ 
+						?>
+							<div class="footer-widgets column-two grid-item">
+								<?php dynamic_sidebar( 'sidebar-4' ); ?>
+							</div>
+						<?php
+					}
+				?>
+
+			</div>
+		</div>
+		
+		<?php
 	} elseif ( is_search() ) {
 		?>
 

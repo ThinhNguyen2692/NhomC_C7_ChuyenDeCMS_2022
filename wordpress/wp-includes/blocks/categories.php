@@ -50,7 +50,7 @@ function render_block_core_categories( $attributes ) {
 		$type           = 'list';
 	}
 
-	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => "wp-block-categories-{$type}" ) );
+	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => "wp-block-categories-{$type} quick-links" ) );
 
 	return sprintf(
 		$wrapper_markup,
