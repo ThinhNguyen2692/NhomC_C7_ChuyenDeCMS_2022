@@ -15,7 +15,7 @@ if ( is_singular() ) {
 
 ?>
 
-<header class="entry-header <?php echo esc_attr( $entry_header_classes ); ?>">
+<header class="<?php if(!is_single()) {echo "entry-header"; }?> <?php echo esc_attr( $entry_header_classes ); ?>">
 
 	<div class="entry-header-inner section-inner medium">
 
@@ -34,8 +34,23 @@ if ( is_singular() ) {
 		if ( is_singular() ) {
 			?>
 			<div class="row">
-			<div class="col-8"><?php the_title( '<div class="conten-name"><h1 class="entry-title">', '</h1></div>' );?></div>
-			<div class="col-4"><?php twentytwenty_the_post_meta(get_the_ID(), 'single-top');?></div>
+			<div class="col-10"><?php the_title( '<div class="conten-name"><h1 class="entry-title">', '</h1></div>' );?></div>
+			<div class="col-2" id="date-detail" >
+				<div class="item-date-deltail">
+				<div class="datetime-detail">
+
+						<div id="date-day-item-detail"><?php the_time( get_the_time( 'd' ) ); ?></div>
+
+						<div>	<?php the_time( get_the_time( 'm' ) ); ?></div>
+
+						</div>
+
+						<div class="date-year-detail">	<?php the_time( get_the_time( 'Y' ) ); ?></div>
+						<div class="item-color"></div>
+				</div>
+			
+					
+			
 			</div>
 
 			<?php
