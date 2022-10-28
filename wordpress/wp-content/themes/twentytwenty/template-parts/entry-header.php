@@ -42,13 +42,9 @@ if (is_singular()) {
 			<div class="col-2" id="date-detail" >
 				<div class="item-date-deltail">
 				<div class="datetime-detail">
-
 						<div id="date-day-item-detail"><?php the_time( get_the_time( 'd' ) ); ?></div>
-
 						<div>	<?php the_time( get_the_time( 'm' ) ); ?></div>
-
 						</div>
-
 						<div class="date-year-detail">	<?php the_time( get_the_time( 'Y' ) ); ?></div>
 						<div class="item-color"></div>
 				</div>
