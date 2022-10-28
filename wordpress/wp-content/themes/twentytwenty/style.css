@@ -6781,6 +6781,7 @@ section .section-title {
 	padding-top: 50px;
 	margin: auto;
 }
-.col-10{
-	text-align: center;
+.item-headername-detail{
+	border-bottom: #000 2px solid;
+	margin-bottom: 10px;
 }

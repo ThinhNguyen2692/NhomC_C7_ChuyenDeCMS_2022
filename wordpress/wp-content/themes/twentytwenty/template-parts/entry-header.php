@@ -11,7 +11,7 @@
 $entry_header_classes = '';
 
 if (is_singular()) {
-	$entry_header_classes .= ' header-footer-group';
+	$entry_header_classes .= 'container header-footer-group';
 }
 
 ?>
@@ -37,8 +37,8 @@ if (is_singular()) {
 		$has_sidebar_2 = is_active_sidebar('sidebar-2');
 		if (is_singular()) {
 		?>
-			<div class="row">
-			<div class="col-10 container"><?php the_title( '<div class="conten-name"><h1 class="entry-title">', '</h1></div>' );?></div>
+			<div class="row <?php if(is_single()){ echo "item-headername-detail";}?>">
+			<div class="col-10"><?php the_title( '<div class="conten-name"><h1 class="entry-title">', '</h1></div>' );?></div>
 			<div class="col-2" id="date-detail" >
 				<div class="item-date-deltail">
 				<div class="datetime-detail">

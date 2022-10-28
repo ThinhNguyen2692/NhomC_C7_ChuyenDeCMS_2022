@@ -39,7 +39,7 @@ $has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
 			<?php
 
 			get_template_part('template-parts/entry-header');
-			if (is_single()) echo '<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />';
+		
 			?>
 			<div class="post-inner <?php if (is_single()) echo "detail-conten"?> <?php echo is_page_template('templates/template-full-width.php') ? '' : 'thin'; ?> ">
 
