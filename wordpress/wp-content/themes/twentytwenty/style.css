@@ -6781,3 +6781,6 @@ section .section-title {
 	padding-top: 50px;
 	margin: auto;
 }
+.col-10{
+	text-align: center;
+}

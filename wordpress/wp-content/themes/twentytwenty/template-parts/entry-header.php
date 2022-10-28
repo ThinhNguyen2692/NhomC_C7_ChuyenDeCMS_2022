@@ -38,7 +38,7 @@ if (is_singular()) {
 		if (is_singular()) {
 		?>
 			<div class="row">
-			<div class="col-10"><?php the_title( '<div class="conten-name"><h1 class="entry-title">', '</h1></div>' );?></div>
+			<div class="col-10 container"><?php the_title( '<div class="conten-name"><h1 class="entry-title">', '</h1></div>' );?></div>
 			<div class="col-2" id="date-detail" >
 				<div class="item-date-deltail">
 				<div class="datetime-detail">
