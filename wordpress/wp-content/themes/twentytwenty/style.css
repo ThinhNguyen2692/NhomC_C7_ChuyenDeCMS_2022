@@ -2467,6 +2467,7 @@ h2.entry-title {
 
 .post-meta-single-top .post-meta {
 	justify-content: center;
+	display: flex;
 }
 
 .post-meta-wrapper {
@@ -5204,7 +5205,7 @@ a.to-the-top > * {
 	}
 
 	.pagination-single a .arrow {
-		margin: 0 2rem 0 0;
+		margin: 0 1rem 0 0;
 	}
 
 	.pagination-single .next-post {

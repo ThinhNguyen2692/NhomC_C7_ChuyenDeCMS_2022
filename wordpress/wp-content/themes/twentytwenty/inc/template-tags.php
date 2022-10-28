@@ -339,7 +339,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 
 		<div class="post-information-div post-meta-wrapper<?php echo esc_attr( $post_meta_wrapper_classes ); ?>">
 
-			<ul class="post-information   post-meta<?php echo esc_attr( $post_meta_classes ); ?>">
+			<ul style="display:flex;" class="post-information  post-meta<?php echo esc_attr( $post_meta_classes ); ?>">
 
 				<?php
 
