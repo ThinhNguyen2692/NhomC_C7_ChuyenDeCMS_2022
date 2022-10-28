@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Displays the post header
  *
@@ -9,13 +10,15 @@
 
 $entry_header_classes = '';
 
-if ( is_singular() ) {
+if (is_singular()) {
 	$entry_header_classes .= ' header-footer-group';
 }
 
 ?>
 
+
 <header class="<?php if(!is_single()) {echo "entry-header"; }?> <?php echo esc_attr( $entry_header_classes ); ?>">
+
 
 	<div class="entry-header-inner section-inner medium">
 
@@ -27,12 +30,13 @@ if ( is_singular() ) {
 		 *
 		 * @param bool Whether to show the categories in header. Default true.
 		 */
-		$show_categories = apply_filters( 'twentytwenty_show_categories_in_entry_header', true );
+		$show_categories = apply_filters('twentytwenty_show_categories_in_entry_header', true);
 
-		
 
-		if ( is_singular() ) {
-			?>
+		$has_sidebar_1 = is_active_sidebar('sidebar-1');
+		$has_sidebar_2 = is_active_sidebar('sidebar-2');
+		if (is_singular()) {
+		?>
 			<div class="row">
 			<div class="col-10"><?php the_title( '<div class="conten-name"><h1 class="entry-title">', '</h1></div>' );?></div>
 			<div class="col-2" id="date-detail" >
@@ -51,35 +55,37 @@ if ( is_singular() ) {
 			
 					
 			
+
 			</div>
 
-			<?php
-		
-			
+		<?php
+
+
 		} else {
-			the_title( '<h2 id="header-home" class="entry-title heading-size-1"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' );
+			the_title('<h2 id="header-home" class="entry-title heading-size-1"><a href="' . esc_url(get_permalink()) . '">', '</a></h2>');
 		}
 
 		$intro_text_width = '';
 
-		if ( is_singular() ) {
+		if (is_singular()) {
 			$intro_text_width = ' small';
 		} else {
 			$intro_text_width = ' thin';
 		}
 
-		if ( has_excerpt() && is_singular() ) {
-			?>
+		if (has_excerpt() && is_singular()) {
+		?>
 
-			<div class="intro-text section-inner max-percentage<?php echo $intro_text_width; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>">
+			<div class="intro-text section-inner max-percentage<?php echo $intro_text_width; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output 
+																?>">
 				<?php the_excerpt(); ?>
 			</div>
 
-			<?php
+		<?php
 		}
 
 		// Default to displaying the post meta.
-		
+
 		?>
 
 	</div><!-- .entry-header-inner -->
