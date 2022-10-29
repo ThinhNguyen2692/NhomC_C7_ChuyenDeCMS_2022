@@ -74,14 +74,15 @@ get_header();
 		</header><!-- .archive-header -->
 		
 		<?php
-	}
+		}
 
-	if ( have_posts() ) {
+		if ( have_posts() ) {
 
-		$i = 0;
-		?> 
-		<div class="row">
+			$i = 0;
+			?> 
+			<div class="row">
 			<div class="col-3 index-active">
+			<div class="crossedbg"></div>
 				<?php
 					$has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
 					if ( $has_sidebar_2){ 
@@ -94,8 +95,8 @@ get_header();
 				?>
 			</div>
 			<div class="col-6">
-		<?php
-		while ( have_posts() ) {
+			<?php
+			while ( have_posts() ) {
 			$i++;
 			if ( $i > 1 ) {
 				echo '<hr class="post-separator styled-separator is-style-wide section-inner" aria-hidden="true" />';
@@ -111,6 +112,12 @@ get_header();
 		?>
 		</div>
 			<div class="col-3">
+			<div class="crossedbg"></div>
+			<div class="item-commets-home"> 
+			<div> 
+				<h2>Comments</h2> 
+
+			</div>
 			<?php
 					$has_sidebar_4 = is_active_sidebar( 'sidebar-4' );
 					if ( $has_sidebar_4){ 
@@ -122,6 +129,7 @@ get_header();
 					}
 				?>
 
+		</div>
 			</div>
 		</div>
 		
