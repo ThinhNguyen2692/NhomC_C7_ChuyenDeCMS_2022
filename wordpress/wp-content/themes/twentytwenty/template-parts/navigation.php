@@ -99,10 +99,57 @@ if ($next_post || $prev_post) {
 
 			if ($next_post) {
 			?>
+							<style>
+					.previous-post {
+						color: #000;
+					}
 
-				<a class="next-post" href="<?php echo esc_url(get_permalink($next_post->ID)); ?>">
-					<span class="arrow" aria-hidden="true">&rarr;</span>
-					<span class="title"><span class="title-inner"><?php echo wp_kses_post(get_the_title($next_post->ID)); ?></span></span>
+					.title {
+						font-size: 18px;
+						font-weight: 300;
+						margin-left: 10%;
+					}
+
+					.pagination-single-inner {
+						flex-direction: column;
+					}
+
+					.arrow {
+						font-size: 0.7em;
+						font-weight: 500;
+						width: 100%;
+						min-width: 55px;
+						display: table-cell;
+						vertical-align: middle;
+						margin: 5px 2rem 0 0
+					}
+
+					.arrow .arrow-headlinesdm {
+						float: left;
+						font-family: 'Prata', serif;
+						margin-top: -7px;
+					}
+
+					.arrow-headlinesday {
+						border-bottom: 1px solid #000;
+					}
+
+					.arrow .arrow-headlinesyear {
+						line-height: 3.5em;
+						float: left;
+						margin-left: 3px;
+						margin-top: -12px;
+					}
+				</style>
+				<a class="previous-post" href="<?php echo esc_url(get_permalink($next_post->ID)); ?>">
+					<div class="arrow">
+						<div class="arrow-headlinesdm">
+							<div class="arrow-headlinesday"><?php echo get_the_date('d', $post_id); ?></div>
+							<div class="arrow-headlinesmonth"><?php echo get_the_date('m', $post_id); ?></div>
+						</div>
+						<div class="arrow-headlinesyear"><?php echo get_the_date('y', $post_id); ?></div>
+						<span class="title"><span class="title-inner"><?php echo wp_kses_post(get_the_title($next_post->ID)); ?></span></span>
+					</div>
 				</a>
 			<?php
 			}
