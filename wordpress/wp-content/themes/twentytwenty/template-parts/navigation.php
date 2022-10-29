@@ -81,7 +81,7 @@ if ($next_post || $prev_post) {
 							<div class="arrow-headlinesmonth"><?php echo get_the_date('m', $post_id); ?></div>
 						</div>
 						<div class="arrow-headlinesyear"><?php echo get_the_date('y', $post_id); ?></div>
-						<span class="title"  style="margin-left: 110px;"><span class="title-inner"><?php echo wp_kses_post(get_the_title($prev_post->ID)); ?></span></span>
+						<span class="title"  style="margin-left: 167px;"><span class="title-inner"><?php echo wp_kses_post(get_the_title($prev_post->ID)); ?></span></span>
 					
 					</div>
 				
