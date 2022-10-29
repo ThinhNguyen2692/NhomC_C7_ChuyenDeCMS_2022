@@ -16,7 +16,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/content.css" type="text/css" media="screen" />
 
@@ -75,14 +75,15 @@
                     ?>
 
                 </div><!-- .header-titles -->
-                <div class="search-box-wrapper">
-                    <div class="search-box">
-                        <form action="" method="get" class="search-form">
-                            <input type="text" class="search-field" name="s" placeholder="Search">
-                            <input type="submit" class="search-submit" value="submit">
-                        </form>
-                    </div>
-                </div>
+
+    <nav class="navbar navbar-light bg-light">
+					<form class="form-inline"  <?php echo $twentytwenty_aria_label; //  
+					?> method="get" action="<?php echo esc_url(home_url('/')); ?>" >
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"  class="search-field border-0 w-100" placeholder="<?php echo esc_attr_x('Search &hellip;', 'placeholder', 'twentytwenty'); ?>" value="<?php echo get_search_query(); ?>" name="s">
+						<button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Submit</button>
+					</form>
+				</nav>
+
                 <button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
                     <span class="toggle-inner">
                         <span class="toggle-icon">
