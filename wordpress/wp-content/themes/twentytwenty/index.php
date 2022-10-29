@@ -80,7 +80,7 @@ get_header();
 
 			$i = 0;
 			?> 
-			<div class="row">
+			<div style="padding-top: 100px;" class="row">
 			<div class="col-3 index-active">
 			
 				<?php
