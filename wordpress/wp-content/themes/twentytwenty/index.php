@@ -82,6 +82,7 @@ get_header();
 		?> 
 		<div class="row">
 			<div class="col-3 index-active">
+			<div class="crossedbg"></div>
 				<?php
 					$has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
 					if ( $has_sidebar_2){ 
@@ -111,6 +112,12 @@ get_header();
 		?>
 		</div>
 			<div class="col-3">
+			<div class="crossedbg"></div>
+			<div class="item-commets-home"> 
+			<div> 
+				<h2>Comments</h2> 
+
+			</div>
 			<?php
 					$has_sidebar_4 = is_active_sidebar( 'sidebar-4' );
 					if ( $has_sidebar_4){ 
