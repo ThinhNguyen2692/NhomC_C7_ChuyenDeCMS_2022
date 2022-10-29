@@ -19,144 +19,144 @@ if (!is_single()) {
 	$class61 = "col-9 content-home";
 	$class22 = "col-2";
 	$class8 = "col-8 danh-sach-content";
-
-}else{
-
+} else {
 }
-$has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
+$has_sidebar_2 = is_active_sidebar('sidebar-2');
 ?>
 
 <article <?php post_class($class); ?> id="post-<?php the_ID(); ?>">
 
-<?php if(is_single()) {
-?>
-<div class="row">
-<div class="col-3 index-active">
-<?php
-					$has_sidebar_3 = is_active_sidebar( 'sidebar-3' );
-					if ( $has_sidebar_3){ 
-						?>
-							<div class="footer-widgets column-two grid-item">
-								<?php dynamic_sidebar( 'sidebar-3' ); ?>
-							</div>
-						<?php
-					}
-				?>
-</div>
-<div class="col-6">
-<?php 
-
-} ?>
-<div <?php post_class($classRow); ?>>
-		<div <?php post_class($class6); ?>><?php
-							if(!is_single()){
-								twentytwenty_the_post_meta(get_the_ID(), 'single-top');
-							}
-							?>
-		</div>
-		<div <?php post_class($class61); ?>>
-			<?php
-
-			get_template_part('template-parts/entry-header');
-		
-			?>
-			<div class="post-inner <?php if (is_single()) echo "detail-conten"?> <?php echo is_page_template('templates/template-full-width.php') ? '' : 'thin'; ?> ">
-
-				<div class="<?php if(is_single()){ echo "container";}?>">
-
-					<?php
-					if (is_search() || !is_singular() && 'summary' === get_theme_mod('blog_content', 'full')) {
-						the_excerpt();
-					} else {
-						if (is_single()) {
-							the_content(__('Continue reading', 'twentytwenty'));
-						} else {
-							$post = get_post();
-							echo substr($post->post_content, 0, 200);
-							?> <a href="<?php echo esc_url( get_permalink() ) ?>">[...]</a><?php
-						}
-					}
-					?>
-					
-				</div><!-- .entry-content -->
-
-			</div><!-- .post-inner -->
-	</div>
-	</div>
-<?php if(is_single()) {
-?>
-</div>
-<div class="col-3 index-active">
-<?php
-					$has_sidebar_1 = is_active_sidebar( 'sidebar-1' );
-					if ( $has_sidebar_3){ 
-						?>
-							<div class="footer-widgets column-two grid-item">
-								<?php dynamic_sidebar( 'sidebar-1' ); ?>
-							</div>
-						<?php
-					}
-				?>
-</div>
-</div>
-<?php 
-
-} ?>
-	
-	
-			<div class="section-inner">
+	<?php if (is_single()) {
+	?>
+		<div class="row">
+			<div class="col-3 index-active">
 				<?php
-				wp_link_pages(
-					array(
-						'before'      => '<nav class="post-nav-links bg-light-background" aria-label="' . esc_attr__('Page', 'twentytwenty') . '"><span class="label">' . __('Pages:', 'twentytwenty') . '</span>',
-						'after'       => '</nav>',
-						'link_before' => '<span class="page-number">',
-						'link_after'  => '</span>',
-					)
-				);
-
-				edit_post_link();
-
-				// Single bottom post meta.
-				twentytwenty_the_post_meta(get_the_ID(), 'single-bottom');
-
-				if (post_type_supports(get_post_type(get_the_ID()), 'author') && is_single()) {
-
-					get_template_part('template-parts/entry-author-bio');
+				$has_sidebar_3 = is_active_sidebar('sidebar-3');
+				if ($has_sidebar_3) {
+				?>
+					<div class="footer-widgets column-two grid-item">
+						<?php dynamic_sidebar('sidebar-3'); ?>
+					</div>
+				<?php
 				}
 				?>
-
-			</div><!-- .section-inner -->
-
+			</div>
+			<div class="col-6">
 			<?php
 
-			if (is_single()) {
+		} ?>
+			<div <?php post_class($classRow); ?>>
+				<div <?php post_class($class6); ?>><?php
+													if (!is_single()) {
+														twentytwenty_the_post_meta(get_the_ID(), 'single-top');
+													}
+													?>
+				</div>
+				<div <?php post_class($class61); ?>>
+					<?php
 
-				get_template_part('template-parts/navigation');
-			}
+					get_template_part('template-parts/entry-header');
 
-			/*
+					?>
+					<div class="post-inner <?php if (is_single()) echo "detail-conten" ?> <?php echo is_page_template('templates/template-full-width.php') ? '' : 'thin'; ?> ">
+
+						<div class="<?php if (is_single()) {
+										echo "container";
+									} ?>">
+
+							<?php
+							if (is_search() || !is_singular() && 'summary' === get_theme_mod('blog_content', 'full')) {
+								the_excerpt();
+							} else {
+								if (is_single()) {
+									the_content(__('Continue reading', 'twentytwenty'));
+								} else {
+									$post = get_post();
+									echo substr($post->post_content, 0, 200);
+							?> <a href="<?php echo esc_url(get_permalink()) ?>">[...]</a><?php
+																						}
+																					}
+																							?>
+
+						</div><!-- .entry-content -->
+
+					</div><!-- .post-inner -->
+				</div>
+			</div>
+			<?php if (is_single()) {
+			?>
+			</div>
+			<div class="col-3 index-active">
+				<?php
+				$has_sidebar_1 = is_active_sidebar('sidebar-1');
+				if ($has_sidebar_3) {
+				?>
+					<div class="footer-widgets column-two grid-item">
+						<?php dynamic_sidebar('sidebar-1'); ?>
+					</div>
+				<?php
+				}
+				?>
+			</div>
+		</div>
+	<?php
+
+			} ?>
+
+
+	<div class="section-inner">
+		<?php
+		wp_link_pages(
+			array(
+				'before'      => '<nav class="post-nav-links bg-light-background" aria-label="' . esc_attr__('Page', 'twentytwenty') . '"><span class="label">' . __('Pages:', 'twentytwenty') . '</span>',
+				'after'       => '</nav>',
+				'link_before' => '<span class="page-number">',
+				'link_after'  => '</span>',
+			)
+		);
+
+		edit_post_link();
+
+		// Single bottom post meta.
+		twentytwenty_the_post_meta(get_the_ID(), 'single-bottom');
+
+		if (post_type_supports(get_post_type(get_the_ID()), 'author') && is_single()) {
+
+			get_template_part('template-parts/entry-author-bio');
+		}
+		?>
+
+	</div><!-- .section-inner -->
+
+	<?php
+
+	if (is_single()) {
+
+		get_template_part('template-parts/navigation');
+	}
+
+	/*
 			* Output comments wrapper if it's a post, or if comments are open,
 			* or if there's a comment number – and check for password.
 			*/
-			if ((is_single() || is_page()) && (comments_open() || get_comments_number()) && !post_password_required()) {
-			?>
+	if ((is_single() || is_page()) && (comments_open() || get_comments_number()) && !post_password_required()) {
+	?>
 
-				<div class="comments-wrapper section-inner">
+		<div class="comments-wrapper section-inner">
 
-					<?php comments_template(); ?>
+			<?php comments_template(); ?>
 
-				</div><!-- .comments-wrapper -->
+		</div><!-- .comments-wrapper -->
 
-			<?php
-			}
-			?>
-	
+	<?php
+	}
+	?>
 
-		
 
-		
-	
+
+
+
+
 
 
 

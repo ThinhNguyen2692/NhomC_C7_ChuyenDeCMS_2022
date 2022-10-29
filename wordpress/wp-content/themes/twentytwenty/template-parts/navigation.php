@@ -71,20 +71,16 @@ if ($next_post || $prev_post) {
 						margin-left: 3px;
 						margin-top: -12px;
 					}
-
 				</style>
 				<a class="previous-post" style="margin-left: 40px ;" href="<?php echo esc_url(get_permalink($prev_post->ID)); ?>">
-
 					<div class="arrow">
 						<div class="arrow-headlinesdm">
 							<div class="arrow-headlinesday"><?php echo get_the_date('d', $post_id); ?></div>
 							<div class="arrow-headlinesmonth"><?php echo get_the_date('m', $post_id); ?></div>
 						</div>
 						<div class="arrow-headlinesyear"><?php echo get_the_date('y', $post_id); ?></div>
-						<span class="title"  style="margin-left: 167px;"><span class="title-inner"><?php echo wp_kses_post(get_the_title($prev_post->ID)); ?></span></span>
-					
+						<span class="title" style="margin-left: 167px;"><span class="title-inner"><?php echo wp_kses_post(get_the_title($prev_post->ID)); ?></span></span>l
 					</div>
-				
 				</a>
 
 				<a class="previous-post" href="<?php echo esc_url(get_permalink($next_post->ID)); ?>">
