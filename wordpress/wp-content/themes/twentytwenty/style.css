@@ -6682,6 +6682,30 @@ section .section-title {
 	color: #fff;
 	
 }
+.index-active li ::before{
+
+		font-family: Arial, Helvetica, sans-serif;
+		color: #f5ce31;
+		content: "\2022";
+		font-size: 2em;
+		padding-right: 0.5em;
+		position: relative;
+		top: 0.15em;
+	
+	
+}
+footer .quick-links li ::before{
+
+	font-family: Arial, Helvetica, sans-serif;
+	color: #f5ce31;
+	content: ">>";
+	font-size: 0.7em;
+	padding-right: 0.5em;
+	position: relative;
+	top: 0.15em;
+
+
+}
 #date-home{
 	margin: auto;
 	
