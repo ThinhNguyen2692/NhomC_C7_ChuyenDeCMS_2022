@@ -30,6 +30,7 @@ $has_sidebar_2 = is_active_sidebar('sidebar-2');
 	?>
 		<div class="row">
 			<div class="col-3 index-active">
+			<div class='crossedbg'></div>
 				<?php
 				$has_sidebar_3 = is_active_sidebar('sidebar-3');
 				if ($has_sidebar_3) {
@@ -87,6 +88,7 @@ $has_sidebar_2 = is_active_sidebar('sidebar-2');
 			?>
 			</div>
 			<div class="col-3 index-active">
+			<div class='crossedbg'></div>
 				<?php
 				$has_sidebar_1 = is_active_sidebar('sidebar-1');
 				if ($has_sidebar_3) {
