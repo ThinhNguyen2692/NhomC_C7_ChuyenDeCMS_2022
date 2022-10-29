@@ -114,10 +114,10 @@ get_header();
 		</div>
 			<div class="col-3">
 			
-			<?php 	if(!is_search()){ echo "<div class='crossedbg'></div> <div class='item-commets-home'> <div> <h2>Comments</h2> </div>" ;}?>
+			<?php 	if(!is_search()){ echo "<div class='crossedbg'></div> <div class='item-commets-home'> <div> <h2>Comments</h2> </div>" ; $has_sidebar_4 = is_active_sidebar( 'sidebar-4' );}?>
 			
 			<?php
-					$has_sidebar_4 = is_active_sidebar( 'sidebar-4' );
+					
 					if ( $has_sidebar_4){ 
 						?>
 							<div class="footer-widgets column-two grid-item">
