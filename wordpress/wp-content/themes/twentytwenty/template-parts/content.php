@@ -20,15 +20,34 @@ if (!is_single()) {
 	$class22 = "col-2";
 	$class8 = "col-8 danh-sach-content";
 
+}else{
+
 }
 $has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
 ?>
 
 <article <?php post_class($class); ?> id="post-<?php the_ID(); ?>">
 
-	
-	
-	<div <?php post_class($classRow); ?>>
+<?php if(is_single()) {
+?>
+<div class="row">
+<div class="col-3 index-active">
+<?php
+					$has_sidebar_3 = is_active_sidebar( 'sidebar-3' );
+					if ( $has_sidebar_3){ 
+						?>
+							<div class="footer-widgets column-two grid-item">
+								<?php dynamic_sidebar( 'sidebar-3' ); ?>
+							</div>
+						<?php
+					}
+				?>
+</div>
+<div class="col-6">
+<?php 
+
+} ?>
+<div <?php post_class($classRow); ?>>
 		<div <?php post_class($class6); ?>><?php
 							if(!is_single()){
 								twentytwenty_the_post_meta(get_the_ID(), 'single-top');
@@ -62,7 +81,29 @@ $has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
 				</div><!-- .entry-content -->
 
 			</div><!-- .post-inner -->
+	</div>
+	</div>
+<?php if(is_single()) {
+?>
+</div>
+<div class="col-3 index-active">
+<?php
+					$has_sidebar_1 = is_active_sidebar( 'sidebar-1' );
+					if ( $has_sidebar_3){ 
+						?>
+							<div class="footer-widgets column-two grid-item">
+								<?php dynamic_sidebar( 'sidebar-1' ); ?>
+							</div>
+						<?php
+					}
+				?>
+</div>
+</div>
+<?php 
 
+} ?>
+	
+	
 			<div class="section-inner">
 				<?php
 				wp_link_pages(
@@ -110,8 +151,8 @@ $has_sidebar_2 = is_active_sidebar( 'sidebar-2' );
 			<?php
 			}
 			?>
-		</div>
-	</div>
+	
+
 		
 
 		
