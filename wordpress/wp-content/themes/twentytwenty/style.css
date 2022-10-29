@@ -6731,10 +6731,57 @@ section .section-title {
 	font-size: 1.8rem;
 }
 .conten-name{
-	padding-top: 110px;
-	text-align: center;
+	padding-top: 100px;
+	padding-bottom: 50px;
+
 	font-size: 2rem;
 }
 .quick-links li a{
 	font-weight: 450;
+}
+#date-detail{
+	font-size: 1.8rem;
+
+	margin: auto;
+}
+#date-day-item-detail{
+	border-bottom: #000 solid 2px;
+	width: 20px;
+}
+.date-year-detail{
+	position: absolute;
+	left: 45px;
+	bottom: 15px;
+}
+.item-color{
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	background: #f5ce31;
+	position: absolute;
+	top: -10px;
+	left: -0px;
+	z-index: -100;
+}
+.quick-links li{
+	padding-top: 30px;
+}
+.crossedbg{
+	background: url(http://fit.tdc.edu.vn/addons/default/themes/bootstrapThree/img/bg_cr_grey.png);
+	height: 15px;
+	width: 253px;
+	position: relative;
+	top: 100px;
+	left: 60px;
+}
+.col-3 .has-avatars li{
+	border-bottom: #000 solid 1px;
+}
+.item-commets-home{
+	padding-top: 50px;
+	margin: auto;
+}
+.item-headername-detail{
+	border-bottom: #000 2px solid;
+	margin-bottom: 10px;
 }
