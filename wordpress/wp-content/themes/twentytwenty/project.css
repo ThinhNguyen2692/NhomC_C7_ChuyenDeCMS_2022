@@ -10,3 +10,11 @@
 .category-text{
     color: #428bca !important;
 }
+
+#site-header {
+    background-color: #ccc !important;
+}
+.search-submit{
+    background-color: #fff !important;
+    color: #000 !important;
+}
