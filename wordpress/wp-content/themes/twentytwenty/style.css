@@ -6697,7 +6697,7 @@ section .section-title {
 footer .quick-links li ::before{
 
 	font-family: Arial, Helvetica, sans-serif;
-	color: #f5ce31;
+	color: #fff;
 	content: ">>";
 	font-size: 0.7em;
 	padding-right: 0.5em;
