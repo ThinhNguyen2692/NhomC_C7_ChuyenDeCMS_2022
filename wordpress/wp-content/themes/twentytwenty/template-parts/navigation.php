@@ -140,8 +140,11 @@ if ($next_post || $prev_post) {
 						margin-left: 3px;
 						margin-top: -12px;
 					}
+					.a{
+						margin-left: 40px;
+					}
 				</style>
-				<a class="previous-post" href="<?php echo esc_url(get_permalink($next_post->ID)); ?>">
+				<a class="previous-post a" href="<?php echo esc_url(get_permalink($next_post->ID)); ?>">
 					<div class="arrow">
 						<div class="arrow-headlinesdm">
 							<div class="arrow-headlinesday"><?php echo get_the_date('d', $post_id); ?></div>
